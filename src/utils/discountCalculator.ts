@@ -1,4 +1,4 @@
-export function calculatorDiscount(
+export function calculateDiscount(
     price: number,
     discountPercentage: number
 ): number {
