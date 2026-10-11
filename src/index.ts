@@ -30,7 +30,7 @@ async function main() {
     products.forEach((product) => {
         product.displayDetails();
         // Display the price after applying the product's discount.
-        console.log("Discounted Price:", product.getPriceWithDiscount());
+        console.log("Discounted Price: $", product.getPriceWithDiscount().toFixed(2));
 
         // Calculate tax on the discounted price.
         const taxAmount = calculateTax(
@@ -38,9 +38,10 @@ async function main() {
             product.category
         );
 
-        console.log("Tax Amount:", taxAmount);
+        console.log("Tax Amount: $", taxAmount.toFixed(2));
     });
 }
+
 
 // Start the application and handle any errors.
 main().catch(handleError);
