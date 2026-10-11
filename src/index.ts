@@ -23,6 +23,8 @@ async function main() {
     // Display the details of each product.
     products.forEach((product) => {
         product.displayDetails();
+        // Display the price after applying the product's discount.
+        console.log("Discounted Price:", product.getPriceWithDiscount());
     });
 }
 
