@@ -4,6 +4,9 @@ import { Product } from "./models/Product.js";
 // Import the function that retrieves products from DummyJSON.
 import { fetchProducts } from "./services/apiService.js";
 
+// Import the utility that calculates tax based on product category.
+import { calculateTax } from "./utils/taxCalculator.js";
+
 // Run the main application.
 async function main() {
     // Retrieve product data from the API.
@@ -25,6 +28,14 @@ async function main() {
         product.displayDetails();
         // Display the price after applying the product's discount.
         console.log("Discounted Price:", product.getPriceWithDiscount());
+
+        // Calculate tax on the discounted price.
+        const taxAmount = calculateTax(
+            product.getPriceWithDiscount(),
+            product.category
+        );
+
+        console.log("Tax Amount:", taxAmount);
     });
 }
 
