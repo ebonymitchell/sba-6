@@ -1,3 +1,6 @@
+// Import our reusable error-handling function.
+import { handleError } from "./utils/errorHandler.js";
+
 // Import the Product class.
 import { Product } from "./models/Product.js";
 
@@ -39,5 +42,5 @@ async function main() {
     });
 }
 
-// Start the application.
-main();
+// Start the application and handle any errors.
+main().catch(handleError);
